@@ -10,6 +10,7 @@ public class BOARD{
     private Boolean isplay;
 
     public static void player_input(Player playerA,Player playerB,String[][] arr){
+        System.out.print("PLAYER INPUT: ");
         Scanner StdIn= new Scanner(System.in);
         String[] input=StdIn.nextLine().split(" ");
         //TRY AND CATCH(EXCEPT):
@@ -180,6 +181,12 @@ public class BOARD{
         Computer computer=new Computer(playerB,arr);
 
         //INITIAL GAME:
+        System.out.println("################");
+        System.out.println("PLAYER IS:"+playerA.player_piece);
+        System.out.println("COMPUTER IS:"+playerB.player_piece);
+        System.out.println("################");
+        System.out.println("");
+        System.out.println("GAME BEGINS");
         initial_game(playerA,playerB,computer,arr);
         //DURING GAME:
         if (playerB.playing==true){
