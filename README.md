@@ -8,15 +8,16 @@ A player versus computer TicTacToe in java✅🔥It is currently in terminal mod
 ------------------
 THE COMPUTER NOT KNOWING WHAT TO DO WHEN IT PIECES ARE TRAPPED:
 e.g computer is o:
-
+<pre>
     0   1   2
   +---+---+---+ <br>
 0 |   |   | x | <br>
-  +---+---+---+
-1 |   | x | o |    /n
-  +---+---+---+  /n
-2 |   | x | o |  /n
-  +---+---+---+ /n
+  +---+---+---+ <br>
+1 |   | x | o | <br>
+  +---+---+---+ <br>
+2 |   | x | o | <br>
+  +---+---+---+ <br>
+</pre>
   THE COMPUTER ENDS UP NOT MAKING NEW MOVES.
   -----------------------------------------
   GAME EXECUTION:
