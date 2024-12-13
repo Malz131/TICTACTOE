@@ -19,6 +19,7 @@ e.g computer is o:
   +---+---+---+ <br>
 </pre>
   THE COMPUTER ENDS UP NOT MAKING NEW MOVES.
+  
   GAME EXECUTION:
   --------------
   java BOARD
