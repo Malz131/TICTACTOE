@@ -15,7 +15,7 @@ e.g)The Computer is o:
   +---+---+---+ <br>
 1 |   | x | o | <br>
   +---+---+---+ <br>
-2 |   | x | o | <br>
+2 |   |   |   | <br>
   +---+---+---+ <br>
 </pre>
   THE COMPUTER ENDS UP NOT MAKING NEW MOVES.
