@@ -10,13 +10,13 @@ THE COMPUTER NOT KNOWING WHAT TO DO WHEN IT PIECES ARE TRAPPED:
 e.g computer is o:
 
     0   1   2
+  +---+---+---+ /n
+0 |   |   | x |    /n
   +---+---+---+
-0 |   |   | x |
-  +---+---+---+
-1 |   | x | o |
-  +---+---+---+
-2 |   | x | o |
-  +---+---+---+
+1 |   | x | o |    /n
+  +---+---+---+  /n
+2 |   | x | o |  /n
+  +---+---+---+ /n
   THE COMPUTER ENDS UP NOT MAKING NEW MOVES.
   -----------------------------------------
   GAME EXECUTION:
