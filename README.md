@@ -10,8 +10,8 @@ THE COMPUTER NOT KNOWING WHAT TO DO WHEN IT PIECES ARE TRAPPED:
 e.g computer is o:
 
     0   1   2
-  +---+---+---+ /n
-0 |   |   | x |    /n
+  +---+---+---+ <br>
+0 |   |   | x | <br>
   +---+---+---+
 1 |   | x | o |    /n
   +---+---+---+  /n
