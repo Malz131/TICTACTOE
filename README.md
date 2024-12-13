@@ -6,8 +6,9 @@ A player versus computer TicTacToe in java✅🔥It is currently in terminal mod
 =>CURRENT ISSUE:
 ------------------
 THE COMPUTER NOT KNOWING WHAT TO DO WHEN IT PIECES ARE TRAPPED:
-e.g computer is o:
 <pre>
+e.g computer is o:
+    
     0   1   2
   +---+---+---+ <br>
 0 |   |   | x | <br>
