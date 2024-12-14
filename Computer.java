@@ -30,8 +30,8 @@ public class Computer{
             }};
         for (int p=0;p<arr.length;p++){
             for (int j=0;j<arr.length;j++){
-                if (arr[p][j]=="   "){
-                    String outcome=single_choice_modthirds(p,j);
+                if (arr[p][j]==opp_entity){
+                    String outcome=single_choice(p,j,playerB.player_piece);
                     if (outcome=="updated"){
                         stopper=stopper+1;
                         return;
@@ -147,41 +147,8 @@ public class Computer{
         playerB.row=row;playerB.col=col;
     
     }
-    public static ArrayList<String> choices_modthirds(int r_pos,int c_pos,String[][]arr){
-        ArrayList<String> vert_options=vertical(r_pos, c_pos, "   ",arr);
-        ArrayList<String> hor_options=horizontal(r_pos, c_pos, "   ",arr);
-        ArrayList<String>   list=new ArrayList<String>();
-        //JUST AN EMPTY LIST:
-        if (vert_options.size()==3 && hor_options.size()==3){
-            vert_options.addAll(hor_options);
-            return vert_options;
-        }
-        else if (vert_options.size()==2){
-            return vert_options;
-        }
-        else if (hor_options.size()==2){
-                return hor_options;
-        }
-        else {return list;}};
-        public static String single_choice_modthirds(int r_pos,int c_pos){
-        
-            ArrayList<String> choices=choices_modthirds(r_pos, c_pos, arr);
-            if (choices.size()!=0){
-            Integer num=Integer.parseInt(Long.toString(Math.round((choices.size()-1)*Math.random())));
-            String choice=choices.get(num);
-            String[] array=choice.split(" ");
-            int row=Integer.parseInt(array[0]);
-            int col=Integer.parseInt(array[1]);
-            playerB.row=row;
-            playerB.col=col;
-            return "updated";
-        }
-            else{
-                return "none";
-            }
-    
-    
-        }
+
+
 
     public static String single_choice(int r_pos,int c_pos,String opp_entity){
         
