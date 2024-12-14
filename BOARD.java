@@ -9,8 +9,8 @@ public class BOARD{
 
     private Boolean isplay;
 
-    public static void player_input(Player playerA,Player playerB,String[][] arr){
-        System.out.print("PLAYER INPUT: ");
+    public static String player_input(Player playerA,Player playerB,String[][] arr){
+        System.out.print("PLAYER INPUT(ROW COL): ");
         Scanner StdIn= new Scanner(System.in);
         String[] input=StdIn.nextLine().split(" ");
         //TRY AND CATCH(EXCEPT):
@@ -22,9 +22,11 @@ public class BOARD{
             playerA.row=row;
             playerA.col=col;
             if (arr[playerA.row][playerA.col]=="   "){
-            arr[playerA.row][playerA.col]=playerA.player_piece;}
+            arr[playerA.row][playerA.col]=playerA.player_piece;
+            return "";}
             else{
                 System.out.println("ERROR: A PIECE EXIST IN CHOSEN POSITION.RETRY");
+                return "repeat";
             }
             // playerB.playing=true;
             // playerA.playing=false;
@@ -35,7 +37,10 @@ public class BOARD{
         catch(Exception e){
             //"ERROR:INVALID POSITION"
             System.out.println("ERROR:INVALID POSITION");
-            System.exit(1);}}
+            System.exit(1);}
+        finally{
+            return "";}
+        }
     //RANDOM LETTER:
     public static void random_letter(BOARD main0,Player playerA,Player playerB){
         Integer r_option=Integer.parseInt(Long.toString(Math.round(1*Math.random())));
@@ -165,7 +170,7 @@ public class BOARD{
                 if (first_move==false){
                 int prev_row=playerA.row;int prev_col=playerA.col;
 
-                player_input(playerA, playerB, arr);
+                String willrepeat=player_input(playerA, playerB, arr);
 
                 //GAMEVALIDATION OBJECT:
                 GAMEVAL gameval0=new GAMEVAL(playerB,playerA,arr);
@@ -173,19 +178,21 @@ public class BOARD{
                 if (prev_row!=playerA.row||prev_col!=playerA.col){
                 String resultsp=gameval0.winner(prev_row,prev_col);
                 print_board(arr);
-                playerB.playing=true;playerA.playing=false;
+               if ( willrepeat!="repeat"){
+                playerB.playing=true;playerA.playing=false;}
                 if (resultsp!="NO WINNER"){
                     System.out.println(resultsp);
                     return;}}
                 else{
                     print_board(arr);
-                        return;}}
+                    }}
             else if (first_move==true){
 
-                player_input(playerA, playerB, arr);
+                String willrepeat=player_input(playerA, playerB, arr);
                 System.out.println("PLAYER TURN ");
                 print_board(arr);
-                playerB.playing=true;playerA.playing=false;
+                if (willrepeat!="repeat"){
+                playerB.playing=true;playerA.playing=false;}
                 first_move=false;}
 
             }
