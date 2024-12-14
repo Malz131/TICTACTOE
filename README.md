@@ -7,12 +7,10 @@ DISCLAIMER!!!
 -------------
 The computer is a bit dumb but fun to play with.😅<br>
 
-=> ISSUE(FIXED):
+BOARD:
 ------------------
-THE COMPUTER NOT KNOWING WHAT TO DO WHEN IT PIECES ARE TRAPPED:
-<pre>
-e.g)The Computer is o:
-    
+e.g)The Computer is o and the player is x.
+  <pre>  
     0   1   2
   +---+---+---+ <br>
 0 |   |   | x | <br>
@@ -22,13 +20,14 @@ e.g)The Computer is o:
 2 |   |   |   | <br>
   +---+---+---+ <br>
 </pre>
-  THE COMPUTER ENDS UP NOT MAKING NEW MOVES.THUS WONT BE TELL IF THE GAME IS A DRAW OR NOT.
-  
-  GAME EXECUTION:
-  --------------
+
+GAME EXECUTION:
+--------------
   java BOARD
   
 =>ISSUE(FIXED):
 -----------------
 PLAYER PLACING A ITS PIECE ON OCCUPIED POSITION
+
+
 
