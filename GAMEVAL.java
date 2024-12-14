@@ -9,7 +9,7 @@ public class GAMEVAL {
         playerA=playera;
         playerB=playerb;
     }
-    public static String winner(){
+    public static String winner(int prevrow,int prevcol){
   
         for (int i=0;i<arr.length;i++){
             for (int k=0;k<arr.length;k++){

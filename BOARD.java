@@ -21,7 +21,11 @@ public class BOARD{
         if ((0<=row && row<=2) && (0<=col && col<=2)){
             playerA.row=row;
             playerA.col=col;
-            arr[playerA.row][playerA.col]=playerA.player_piece;
+            if (arr[playerA.row][playerA.col]=="   "){
+            arr[playerA.row][playerA.col]=playerA.player_piece;}
+            else{
+                System.out.println("ERROR: A PIECE EXIST IN CHOSEN POSITION.RETRY");
+            }
             // playerB.playing=true;
             // playerA.playing=false;
         }
@@ -124,45 +128,69 @@ public class BOARD{
     // THE GAMELOOP:
     public static void during_game(Player playerA,Player playerB,Computer computer,String[][] arr){
         Boolean winner=false;
-
+        Boolean first_move=true;
         while (winner==false){
 
             if (winner==true){
                 break;
             };
             if (playerB.playing==true){
+            if (first_move==false){
+            int prev_row=playerB.row;int prev_col=playerB.col;
+
             computer.checker(playerA.player_piece);
             arr[playerB.row][playerB.col]=playerB.player_piece;
             //GAMEVALIDATION OBJECT:
             GAMEVAL gameval=new GAMEVAL(playerB,playerA,arr);
-            String results=gameval.winner();
+            String results=gameval.winner(prev_row,prev_col);
             System.out.println("COM001 TURN");
             print_board(arr);
             playerB.playing=false;playerA.playing=true;
             if (results!="NO WINNER"){
                 System.out.println(results);
                 return;
-            }
+            }}
+            else{
+                computer.checker(playerA.player_piece);
+                arr[playerB.row][playerB.col]=playerB.player_piece;
+                System.out.println("COM001 TURN");
+                print_board(arr);
+                playerB.playing=false;playerA.playing=true;
+                first_move=false;
+            };
             
 
         }
             if (playerA.playing==true){
+                if (first_move==false){
+                int prev_row=playerA.row;int prev_col=playerA.col;
+
                 player_input(playerA, playerB, arr);
 
                 //GAMEVALIDATION OBJECT:
                 GAMEVAL gameval0=new GAMEVAL(playerB,playerA,arr);
                 System.out.println("PLAYER TURN ");
-                String resultsp=gameval0.winner();
+                if (prev_row!=playerA.row||prev_col!=playerA.col){
+                String resultsp=gameval0.winner(prev_row,prev_col);
                 print_board(arr);
                 playerB.playing=true;playerA.playing=false;
                 if (resultsp!="NO WINNER"){
                     System.out.println(resultsp);
-                    return;
-                }
-            };
+                    return;}}
+                else{
+                    print_board(arr);
+                        return;}}
+            else if (first_move==true){
 
-        };
-    }
+                player_input(playerA, playerB, arr);
+                System.out.println("PLAYER TURN ");
+                print_board(arr);
+                playerB.playing=true;playerA.playing=false;
+                first_move=false;}
+
+            }
+            
+                }}
     public static void main(String[] args){
         String[][] arr= new String[3][3];
         //CLEAN THE BOARD AND PRINT THE EMPTY BOARD:
