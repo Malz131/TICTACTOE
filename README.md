@@ -6,6 +6,7 @@ A player versus computer TicTacToe in java✅🔥It is currently in terminal mod
 DISCLAIMER!!!
 -------------
 The computer is a bit dumb but fun to play with.<br>
+
 => ISSUE(FIXED):
 ------------------
 THE COMPUTER NOT KNOWING WHAT TO DO WHEN IT PIECES ARE TRAPPED:
